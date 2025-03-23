@@ -30,5 +30,18 @@ jobs:
         with:
           name: summary
           path: pwd/summary/summary.txt   
+      - name: Create Release
+        if: github.event.inputs.who == 'Lisa'
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v1.0.0
+          release_name: Release ${{ github.run_number }}
+          body: |
+            Changes in this Release
+            - Added a new feature
+          draft: false
+          prerelease: false
+
 
 

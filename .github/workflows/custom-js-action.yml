@@ -1,6 +1,7 @@
 name: Custom JS Action Workflow
 
-# on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   run-custom-js-action:

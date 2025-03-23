@@ -10,7 +10,8 @@
 # supported CodeQL languages.
 #
 name: "CodeQL"
-
+on:
+  workflow_dispatch:
 # on:
 #   push:
 #     branches: [ "main", "release/*" ]

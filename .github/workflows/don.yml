@@ -31,6 +31,8 @@ jobs:
         with:
           name: summary
           path: pwd/summary/summary.txt   
+          retention-days: 1
+          overwrite: true
       - name: Create Release
         if: github.event.inputs.who == 'Lisa'
         id: create_release
@@ -39,7 +41,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+          release_name: Release ${{ github.sha }}
+  job2:
+    permissions: write-all # or write-all
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Download Summary
+        uses: actions/download-artifact@v4
+        with:
+          name: summary
 
+
+            
 
 

@@ -22,13 +22,13 @@ jobs:
       - name: Summary
         run: echo ${{ inputs.who }} >> $GITHUB_STEP_SUMMARY
       - name: Makedir
-        run: mkdir -p /pwd/summary
+        run: mkdir -p pwd/summary
       - name: Place File       
-        run: echo ${{ inputs.who }} > /pwd/summary/summary.txt
+        run: echo ${{ inputs.who }} > pwd/summary/summary.txt
       - name: Upload Summary
         uses: actions/upload-artifact@v4
         with:
           name: summary
-          path: /pwd/summary/summary.txt   
+          path: pwd/summary/summary.txt   
 
 

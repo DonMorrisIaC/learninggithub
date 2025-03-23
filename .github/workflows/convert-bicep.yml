@@ -1,8 +1,8 @@
 name: Convert Bicep to JSON
 
 on:
-  push:
-    branches: [ main ] 
+  # push:
+  #   branches: [ main ] 
   workflow_dispatch:   
 
 jobs:

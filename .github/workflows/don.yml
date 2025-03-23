@@ -1,0 +1,22 @@
+name: Don
+
+on:
+  workflow_dispatch:
+    inputs:
+      who:
+        description: 'What do you want?'
+        type: choice
+        required: true
+        default: 'Mona'
+        options:
+          - Mona
+          - Lisa
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Repo
+        uses: actions/checkout@v4
+      - name: Show me
+        run: echo "Hello, ${{ github.actor }}. You chose ${{ inputs.who }}."
+

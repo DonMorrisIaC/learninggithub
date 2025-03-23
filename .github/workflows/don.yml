@@ -26,7 +26,7 @@ jobs:
       - name: Place File       
         run: echo ${{ inputs.who }} > /pwd/summary/summary.txt
       - name: Upload Summary
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: summary
           path: /pwd/summary/summary.txt   

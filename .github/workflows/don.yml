@@ -11,6 +11,11 @@ on:
         options:
           - Mona
           - Lisa
+      when:
+        description: 'When do you want it?'
+        type: boolean
+        required: false
+        default: false 
 jobs:
   job1:
     permissions: write-all # or write-all

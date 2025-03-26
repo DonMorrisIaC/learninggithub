@@ -27,6 +27,7 @@ jobs:
         run: echo "Hello, ${{ github.actor }}. You chose ${{ inputs.who }}."
       - name: Summary
         run: echo ${{ inputs.who }} >> $GITHUB_STEP_SUMMARY
+             echo ${{ inputs.who }} >> "$GITHUB_ENV"
       - name: Makedir
         run: mkdir -p pwd/summary
       - name: Place File       

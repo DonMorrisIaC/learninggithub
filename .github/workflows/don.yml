@@ -15,7 +15,10 @@ on:
         description: 'When do you want it?'
         type: boolean
         required: false
-        default: false 
+        default: false
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   job1:
     permissions: write-all # or write-all
